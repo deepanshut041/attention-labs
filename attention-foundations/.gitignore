@@ -9,10 +9,9 @@
 /build/
 /.env
 /.env.*
+!/src/data/
 __pycache__/
 .pytest_cache/
 *.py[cod]
 *.egg-info/
 .ipynb_checkpoints/
-!/src/data/
-!/src/data/**
