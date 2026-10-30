@@ -1,0 +1,51 @@
+title = "Attention Foundations"
+description = "Build and test additive, dot-product, self and causal attention."
+focus = "Run Project status or Check setup; then begin additive attention."
+notice = "Boilerplate and Colab runner only. Attention mechanisms remain pending."
+
+[labels]
+run = "Run"
+setup = "Setup env"
+build = "Build pkg"
+test = "Checks"
+
+[[runners]]
+id = "status"
+label = "Project status"
+path = "src/attention_foundations.py"
+args = ["status"]
+description = "Show the project goal, mechanism scope and pending work."
+
+[[runners]]
+id = "check"
+label = "Check setup"
+path = "src/check_setup.py"
+description = "Check pinned dependencies, CPU tensors and autograd."
+
+[[runners]]
+id = "config"
+label = "Show configuration"
+path = "src/show_config.py"
+description = "Read the single-head scope and numerical-check defaults."
+
+[[runners]]
+id = "colab-export"
+label = "Export for Colab"
+path = "src/export_colab.py"
+description = "Create a source ZIP, matching hash manifest and cleared notebook."
+
+[[resources]]
+label = "Project goal and build route"
+path = "README.md"
+
+[[resources]]
+label = "Google Colab instructions"
+path = "COLAB.md"
+
+[[resources]]
+label = "Colab notebook"
+path = "notebooks/attention_foundations_colab.ipynb"
+
+[[resources]]
+label = "Project configuration"
+path = "src/core/project.toml"

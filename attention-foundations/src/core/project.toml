@@ -1,0 +1,15 @@
+schema_version = 1
+project_id = "attention-foundations"
+goal = "Build basic single-head attention mechanisms and verify their mathematics, gradients and masking."
+
+[scope]
+mechanisms = ["additive", "dot-product", "scaled-dot-product", "self-attention", "projected-self-attention", "causal-attention"]
+supporting = ["stable-softmax", "padding-masks", "attention-dropout", "gradient-checks"]
+excluded = ["multi-head-attention", "GQA", "MQA", "MLA", "positional-encodings", "full-translator"]
+
+[experiment]
+seed = 17
+device = "cpu"
+dtype = "float64"
+absolute_tolerance = 1e-10
+relative_tolerance = 1e-9

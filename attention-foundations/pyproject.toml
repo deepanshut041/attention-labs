@@ -1,0 +1,36 @@
+[project]
+name = "attention-foundations"
+version = "0.1.0"
+description = "Build and verify basic single-head attention mechanisms"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = ["torch==2.14.1", "numpy==2.5.4"]
+
+[project.scripts]
+attention-foundations = "attention_foundations:main"
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src"]
+sources = ["src"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/notebooks", "/README.md", "/COLAB.md", "/pyproject.toml", "/uv.lock", "/.python-version", "/.gitignore", "/.ai-project.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
